@@ -20,9 +20,9 @@ public class Paint {
 	}
 
 	public static void drawPaint(Graphics g) {
-		
-		int tarGained = SwampTarLooter.startTar - Inventory.count(true, Ground.TAR);
-		
+
+		int tarGained = Inventory.count(true, Ground.TAR) - SwampTarLooter.startTar;
+
 		drawMouse(g);
 		g.drawString("Time Running: " + Time.format(SwampTarLooter.runTime.getElapsed()), 250, 250);
 		g.drawString("Tar Gained: " + tarGained, 270, 270);
