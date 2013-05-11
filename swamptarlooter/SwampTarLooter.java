@@ -24,7 +24,7 @@ public class SwampTarLooter extends ProceduralScript {
 
 	@Override
 	public boolean onStart() {
-		if(Game.isLoggedIn()) {
+		if (Game.isLoggedIn()) {
 			startTar = Inventory.count(true, Ground.TAR);
 			register(new LootHandler());
 		}
@@ -32,7 +32,10 @@ public class SwampTarLooter extends ProceduralScript {
 	}
 
 	@Override
-	public void render(Graphics2D arg0) {
+	public void render(Graphics2D g) {
+		if (Game.isLoggedIn()) {
+			Paint.drawPaint(g);
+		}
 		
 	}
 }
